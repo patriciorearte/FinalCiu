@@ -1,12 +1,12 @@
 
 import './css/App.css';
 import NavBar from './componentes/NavBar';
-import Formulario from './componentes/Formulario';
+import TarjetaClima from './componentes/TarjetaClima';
 function App() {
   return (
     <div className="App">
       <NavBar></NavBar>
-      <Formulario></Formulario>
+      <TarjetaClima></TarjetaClima>
     </div>
   );
 }
