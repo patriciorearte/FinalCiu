@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import React,{useState} from 'react'
 import Formulario from './Formulario';
-const TarjetaClima = () => {
+const ControlClima = () => {
     let urlApi = "https://api.openweathermap.org/data/2.5/weather?appid=69c112b46c91738193e83d82a8f9af9d&lang=es"
     let urlCiudad ="&q="; //parametro que usa la url para buscar la ciudad
     let urlPredicciones = "https://api.openweathermap.org/data/2.5/forecast?appid=69c112b46c91738193e83d82a8f9af9d&lang=es"
@@ -50,4 +50,4 @@ const TarjetaClima = () => {
      );
 }
  
-export default TarjetaClima;
+export default ControlClima;
