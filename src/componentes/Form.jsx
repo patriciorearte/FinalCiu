@@ -3,9 +3,8 @@ const Form = ({newLocation}) => {
     const [city, setCity] = useState("");
 
     const onSubmit = (e) => {
-        e.preventDefault();
-        console.log({city});
-        if(city === "" || !city) return;
+        e.preventDefault(); // funcion para que no recargue la pagina despues del evento(persiste el dato del input)
+        if(city === "" || !city) return; // pregunta por el estado de city por si tiene vacio o no tiene nada
 
         newLocation(city);
     }
