@@ -1,8 +1,18 @@
 import React from 'react'
-import DisenioSpinner from "../css/DisenioSpinner.css"
+import "../css/DisenioSpinner.css"
 const Spinner = () => {
     return ( 
-        <div className="lds-ripple">
+        <div className="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
             <div></div>
             <div></div>
         </div>

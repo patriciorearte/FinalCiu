@@ -3,7 +3,7 @@ import Spinner  from './Spinner';
 const Card = ({loadingData, showData, weather, forecast}) => {
 
     var today = new Date();
-    var day = today.getDate();
+    var day = today.getDate();                  //cracion de fecha 
     var month = today.getMonth() + 1;
     var year = today.getFullYear();
     var date = day + '/' + month + '/' + year;
@@ -20,20 +20,23 @@ const Card = ({loadingData, showData, weather, forecast}) => {
     var forecastDate9 = "";
 
     if(loadingData){
-        return  <Spinner />;
+        return  <Spinner />; // para visualizar el spinner 
     }
 
     if(showData){
         url = "http://openweathermap.org/img/w/";
-        iconUrl = url + weather.weather[0].icon + ".png";
+        iconUrl = url + weather.weather[0].icon + ".png";      // para visualizar el icono del clima actual
         
         iconUrl3 = url + forecast.list[1].weather[0].icon + ".png";
-        iconUrl6 = url + forecast.list[2].weather[0].icon + ".png";
+        iconUrl6 = url + forecast.list[2].weather[0].icon + ".png";  // para visualizar el icono de las predicicion x 3horas
         iconUrl9 = url + forecast.list[3].weather[0].icon + ".png";
 
         forecastDate3 = forecast.list[1].dt_txt.substring(8, 10) + '/' + forecast.list[1].dt_txt.substring(5, 7) + '/' + forecast.list[1].dt_txt.substring(0, 4) + ' ' +  forecast.list[1].dt_txt.substring(11, 13);
         forecastDate6 = forecast.list[2].dt_txt.substring(8, 10) + '/' + forecast.list[2].dt_txt.substring(5, 7) + '/' + forecast.list[2].dt_txt.substring(0, 4) + ' ' +  forecast.list[2].dt_txt.substring(11, 13);
         forecastDate9 = forecast.list[3].dt_txt.substring(8, 10) + '/' + forecast.list[3].dt_txt.substring(5, 7) + '/' + forecast.list[3].dt_txt.substring(0, 4) + ' ' +  forecast.list[3].dt_txt.substring(11, 13);
+        // visualizacion de la fecha 
+        // la funcion substring extrae string segun su posicion pasada por parametro
+    
     }
 
     return (
@@ -48,15 +51,15 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                                 <div className="col-md-4">
                                     <h3 className="card-title">{weather.name}</h3>
                                     <p className="card-date">{date}</p>
-                                    <h1 className="card-temp">{(weather.main.temp - 273.15).toFixed(1)}ºC</h1>
+                                    <h1 className="card-temp">{(weather.main.temp - 273.15).toFixed(1)}ºC</h1> 
                                     <p className="card-desc"><img src={iconUrl} alt="icon"/>{weather.weather[0].description}</p>
-                                    <img src="https://images.pexels.com/photos/10817264/pexels-photo-10817264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" className="img-fluid rounded-start" alt="..."/>
+                                    <img src="https://images.pexels.com/photos/1755683/pexels-photo-1755683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="img-fluid rounded-start" alt="..."/>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body text-start mt-2">
                                         <h5 className="card-text">Temperatura máxima: {(weather.main.temp_max - 273.15).toFixed(1)}ºC</h5>
                                         <h5 className="card-text">Temperatura mínima: {(weather.main.temp_min - 273.15).toFixed(1)}ºC</h5>
-                                        <h5 className="card-text">sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
+                                        <h5 className="card-text">Sensación térmica: {(weather.main.feels_like- 273.15).toFixed(1)}ºC</h5>
                                         <h5 className="card-text">Humedad: {weather.main.humidity}%</h5>
                                         <h5 className="card-text">Velocidad del viento: {weather.wind.speed}m/s</h5>
                                     </div>
@@ -91,7 +94,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                     </div>
 
                 ):(
-                    <h2 className="text-light">Sin datos</h2>
+                    <h2 className="text-light">Sin datos, realice su busqueda</h2>
                 )
             }
 

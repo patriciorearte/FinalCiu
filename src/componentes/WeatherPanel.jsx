@@ -58,7 +58,7 @@ const WeatherPanel = () => {
         <Fragment>
     
             <Form
-                newLocation = {getLocation}
+                newLocation = {getLocation} 
             />
 
             <Card

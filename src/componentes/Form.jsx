@@ -6,7 +6,7 @@ const Form = ({newLocation}) => {
         e.preventDefault(); // funcion para que no recargue la pagina despues del evento(persiste el dato del input)
         if(city === "" || !city) return; // pregunta por el estado de city por si tiene vacio o no tiene nada
 
-        newLocation(city);
+        newLocation(city);// le paso por parametro la ciudad puesta en el input a la funcion
     }
 
     return(
